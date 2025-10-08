@@ -1,0 +1,13 @@
+version: '3'
+services:
+  litecart:
+    container_name: litecart
+    restart: unless-stopped
+    expose:
+      - 80:8080
+    volumes:
+      - ./lc_base:/lc_base
+      - ./lc_digitals:/lc_digitals
+      - ./lc_uploads:/lc_uploads
+      - ./site:/site
+    image: shurco/litecart:latest
